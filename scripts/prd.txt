@@ -1,0 +1,47 @@
+# Product Requirements Document (PRD)
+
+## Project Title
+Apptek MCP Server for ASR, TTS, and MT APIs
+
+## Overview
+Build a Model Context Protocol (MCP) server that provides unified access to Apptek’s ASR (Automatic Speech Recognition), TTS (Text-to-Speech), and MT (Machine Translation) APIs. The server should expose endpoints for each service and manage authentication, request validation, and response formatting.
+
+## Goals
+- Provide a unified API for Apptek’s ASR, TTS, and MT services.
+- Support listing available models for each service.
+- Handle audio and text input/output for ASR and TTS.
+- Enable translation between multiple language pairs.
+- Ensure secure, authenticated access to all endpoints.
+- Support batch processing for ASR, MT, and TTS.
+- Deploy as a serverless function (e.g., Netlify).
+- Log all API activity for monitoring and auditing.
+
+## Features
+- Health check endpoint.
+- ASR: Transcribe audio to text (single and batch), list available ASR models.
+- TTS: Convert text to speech (single and batch), list available TTS models.
+- MT: Translate text (single and batch), list available translation models.
+- Language identification endpoint.
+- Error handling and consistent response format.
+- Logging of all requests and responses.
+
+## Requirements
+- Python 3.8+
+- uv for dependency management
+- FastAPI for API endpoints
+- FastMCP library for MCP protocol support
+- Integration with Apptek API (using provided API token)
+- Deployment as a serverless function
+
+## Non-Goals
+- UI/frontend (API only)
+- Long-term storage of user data
+
+## Success Metrics
+- All endpoints respond with correct data and error codes.
+- Latency for each endpoint is within acceptable range (<1s for health, <5s for processing).
+- 100% automated test coverage for core endpoints.
+- Logging covers all API activity.
+
+## Open Questions
+- What logging and monitoring tools should be used?
